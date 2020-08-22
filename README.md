@@ -1,33 +1,42 @@
-# Attend the Next Free Online Workshop!
-RSVP Here:  **https://www.eventbrite.com/e/full-day-workshop-kubeflow-gpu-kerastensorflow-20-tf-extended-tfx-kubernetes-pytorch-xgboost-tickets-63362929227**
+# Attend our Free, Online, Full-Day Workshop!
+You must register on [**Eventbrite**](https://www.eventbrite.com/e/full-day-workshop-kubeflow-gpu-kerastensorflow-20-tf-extended-tfx-kubernetes-pytorch-xgboost-tickets-63362929227).  
 
-# Agenda
-![Workshop Agenda](img/outline.png) 
+_All instructions will come through Eventbrite.  Please make sure your Eventbrite email address is up to date._
 
-This workshop creates an ephemeral AWS acccount for you to use only for this workshop.  
+# Upcoming O'Reilly Book:  _Data Science on Amazon Web Services_
+Register for early access directly on our [**website**](https://datascienceonaws.com).
 
-_This account will be torn down and not accessible immediately after the workshop._
+Request one of our [**talks**](https://datascienceonaws.com/talks) for your conference or meetup.
 
-# Instructions for the Day of the Workshop
+_Influence the book by filling out our [**quick survey**](https://www.surveymonkey.com/r/798CMZ3)._
+
+[![Data Science on Amazon Web Services](img/data-science-on-aws-book.png)](https://datascienceonaws.com)
+
+# Workshop Cost - FREE
+
+This workshop is FREE, but would otherwise cost <25 USD.
+
+![Workshop Cost](img/billing.png)
+
+# Workshop Agenda
+[![Workshop Agenda](img/outline.png)](https://www.eventbrite.com/e/full-day-workshop-kubeflow-gpu-kerastensorflow-20-tf-extended-tfx-kubernetes-pytorch-xgboost-tickets-63362929227)
+
+# Workshop Instructions
+_Note:  This workshop will create an ephemeral AWS acccount for each attendee.  This ephemeral account is not accessible after the workshop.  You can, of course, clone this GitHub repo and reproduce the entire workshop in your own AWS Account._
 
 ## 1. Logout of All AWS Consoles Across All Browser Tabs
-If you don't logout, the following instructions will not work properly.
+If you do not logout of existing AWS Consoles, things will not work properly.
 
 _Please logout of all AWS Console sessions in all browser tabs._
 
-## 2. Login to AWS Workshop Portal
 
-You will need the **Participant Hash** provided upon entry, and your email address to track your unique session.
+## 2. Login to the Workshop Portal (aka Event Engine)
 
-Connect to the portal by clicking the button or browsing to the following url:
+**If you are registered on Eventbrite, you will receive a link to the Workshop 1 hour before the event.**  
 
-[**https://dashboard.eventengine.run/**](https://dashboard.eventengine.run/)
+**The email with the link will come through Eventbrite.**
 
-We will provide you with a hash code.  Enter this code when you see the following screen.
-
-![Event Engine](img/event-engine-initial-screen.png)
-
-Enter the provided hash in the text box. The button on the bottom right corner changes to **Accept Terms & Login**. Click on that button to continue.
+**Please make sure your Eventbrite email is up to date.**
 
 ![Event Engine Dashboard](img/event-engine-dashboard.png)
 
@@ -39,9 +48,10 @@ Take the defaults and click on **Open AWS Console**. This will open AWS Console 
 
 Double-check that your account name is something like `TeamRole/MasterKey` as follows:
 
-![](img/teamrole-masterkey.png)
+![IAM Role](img/teamrole-masterkey.png)
 
 If not, please logout of your AWS Console in all browser tabs and re-run the steps above!
+
 
 ## 3. Launch an Amazon SageMaker Notebook Instance
 
@@ -57,11 +67,7 @@ Select `Create notebook instance`.
 
 ![SageMaker Console](img/setup_aws_console_2.png)
 
-In the Notebook instance name text box, enter a name for the notebook instance.
-
-<!--- ![Fill notebook instance](img/setup_fill_notebook.png) --->
-
-For this workshop select `workshop` as the instance name.
+In the Notebook instance name text box, enter `workshop`.
 
 Choose `ml.c5.2xlarge`. We'll only be using this instance to launch jobs. The training job themselves will run either on a SageMaker managed cluster or an Amazon EKS cluster.
 
@@ -79,50 +85,38 @@ Keep the default settings for the other options not highlighted in red, and clic
 
 ![Fill notebook instance](img/notebook-setup03.png)
 
-While the notebook spins up, continue to work on the next section.  We'll come back to the notebook when it's ready.
 
-## 4. Update IAM Role Policy
-
-Click on the `notebook` instance to see the instance details.
-`
-![Notebook Instance Details](img/click_notebook_instance.png)
-
-Click on the IAM role link and navigate to the IAM Management Console.
-
-![IAM Role](img/update_iam.png)
-
-Click `Attach Policies`.
-
-![IAM Policy](img/view_policies.png)
-              
-Select `AdministratorAccess` and click on `Attach Policy`.
-
-_Note:  Never do this in your production account.  Please follow a least-priviledge security model._ 
-
-![Attach Admin Policy](img/attach_admin_policy.png)
-
-## 5. Start the Jupyter notebook
+## 4. Start the Jupyter notebook
 
 _Note:  Proceed when the status of the notebook instance changes from `Pending` to `InService`._
 
 ![Start Jupyter](img/start_jupyter.png)
 
-## 6. Launch a new Terminal within the Jupyter notebook
 
-Click `File` > `New` > `Terminal` to launch a terminal in your Jupyter instance.
+## 5. Launch a new Terminal within the Jupyter notebook
+
+Click `File` > `New` > [...scroll down...] `Terminal` to launch a terminal in your Jupyter instance.
 
 ![](img/launch_jupyter_terminal.png)
 
-## 7. Clone this Workshop content in the terminal
+## 6. Clone this GitHub Repo in the Terminal
 
 Within the Jupyter terminal, run the following:
-```
-cd ~/SageMaker
 
-git clone https://github.com/data-science-on-aws/workshop
+```
+cd ~/SageMaker && git clone https://github.com/data-science-on-aws/workshop
 ```
 
-## 8. Start the Workshop
-Navigate to `01_setup/` in your Jupyter notebook to start the workshop.
+![](img/clone-workshop-repo.png)
+
+## 7. Navigate Back to Notebook View
+
+![](img/back-to-jupyter-notebook.png)
+
+
+## 8. Start the Workshop!
+Navigate to `01_intro/` in your Jupyter notebook and start the workshop!
+
+_You may need to refresh your browser if you don't see the new `workshop/` directory._
 
 ![Start Workshop](img/start_workshop.png)
